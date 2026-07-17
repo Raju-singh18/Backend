@@ -1,0 +1,38 @@
+const mongoose = require("mongoose");
+const mailSender = require("../utils/mailSender");
+
+const otpSchema = new mongoose.Schema({
+  email: {
+    type: String,
+    required: true,
+  },
+
+  otp: {
+    type: String,
+    required: true,
+  },
+
+  createdAt: {
+    type: Date,
+    default: Date.now,
+    expires: 300, // OTP expires after 5 minutes
+  },
+});
+
+async function verificationEmail(email, otp) {
+  await mailSender(
+    email,
+    "OTP for Email Verification",
+    `Your OTP for Email Verification is ${otp}`
+  );
+}
+
+otpSchema.pre("save", async function () {
+  try {
+    await verificationEmail(this.email, this.otp);
+  } catch (error) {
+    next(error);
+  }
+});
+
+module.exports = mongoose.model("OTP", otpSchema);
