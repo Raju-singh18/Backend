@@ -1,0 +1,16 @@
+Lorem ipsum dolor sit amet, consectetur 
+adipiscing elit. Sed do eiusmod tempor 
+incididunt ut labore et dolore magna aliqua.
+Ut enim ad minim veniam, quis nostrud exercitation
+ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
+dolore eu fugiat nulla pariatur.
+
+Full-stack web development involves 
+building both the frontend and backend 
+of web applications. Technologies like 
+HTML, CSS, JavaScript, React.js, Node.js,
+Express.js, and MongoDB are commonly used
+in the MERN stack. Developers create responsive 
+user interfaces, design REST APIs, manage databases, and 
+deploy applications to cloud platforms.
